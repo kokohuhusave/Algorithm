@@ -52,18 +52,18 @@ int main()
 
 }
 void BFS(int node) {
-		queue<int> myqueue;
-		myqueue.push(node);
-		visited[node]++;
-	
-		while (!myqueue.empty()) {
-			int now_node = myqueue.front();
-			myqueue.pop();
-			for (int i : A[now_node]) {
-				if (visited[i] == -1) {
-					visited[i] = visited[now_node] + 1;
-					myqueue.push(i);
-				}
+	queue<int> myqueue;
+	myqueue.push(node);
+	visited[node]++;
+
+	while (!myqueue.empty()) {
+		int now_node = myqueue.front();
+		myqueue.pop();
+		for (int i : A[now_node]) {
+			if (visited[i] == -1) {
+				visited[i] = visited[now_node] + 1;
+				myqueue.push(i);
 			}
 		}
 	}
+}
